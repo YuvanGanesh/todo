@@ -41,14 +41,14 @@ export default function TaskCard({ task, onToggle, onEdit, onDelete }) {
                     onClick={() => onEdit(task)}
                     title="Edit task"
                 >
-                    ✏️
+                    Edit
                 </button>
                 <button
                     className={`btn-icon btn-delete ${confirmDelete ? 'confirm-delete' : ''}`}
                     onClick={handleDelete}
                     title={confirmDelete ? 'Click again to confirm' : 'Delete task'}
                 >
-                    {confirmDelete ? '⚠️ Sure?' : '🗑️'}
+                    {confirmDelete ? 'Sure?' : 'Delete'}
                 </button>
             </div>
         </div>

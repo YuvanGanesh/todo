@@ -44,7 +44,7 @@ export default function TaskForm({ onSubmit, initialData, onCancel }) {
             </div>
             <div className="task-form-actions">
                 <button type="submit" className="primary-btn">
-                    {isEditing ? '💾 Save' : '➕ Add Task'}
+                    {isEditing ? ' Save' : 'Add Task'}
                 </button>
                 {isEditing && (
                     <button type="button" className="secondary-btn" onClick={onCancel}>

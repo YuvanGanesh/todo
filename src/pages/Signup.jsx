@@ -39,9 +39,7 @@ export default function Signup() {
         <div className="auth-container">
             <div className="auth-card">
                 <div className="auth-header">
-                    <span className="auth-logo">✅</span>
                     <h2>Create Account</h2>
-                    <p className="auth-subtitle">Sign up to start managing your tasks.</p>
                 </div>
                 {error && <p className="error-msg">{error}</p>}
                 <form onSubmit={handleSubmit}>
@@ -50,7 +48,7 @@ export default function Signup() {
                         <input
                             id="signup-name"
                             type="text"
-                            placeholder="John Doe"
+                            placeholder="Enter the name"
                             required
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -61,7 +59,7 @@ export default function Signup() {
                         <input
                             id="signup-email"
                             type="email"
-                            placeholder="you@example.com"
+                            placeholder="you@gmail.com"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}

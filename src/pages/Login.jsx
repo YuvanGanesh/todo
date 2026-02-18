@@ -39,7 +39,6 @@ export default function Login() {
         <div className="auth-container">
             <div className="auth-card">
                 <div className="auth-header">
-                    <span className="auth-logo">✅</span>
                     <h2>Task Manager</h2>
                     <p className="auth-subtitle">Welcome back! Log in to continue.</p>
                 </div>
@@ -50,7 +49,7 @@ export default function Login() {
                         <input
                             id="login-email"
                             type="email"
-                            placeholder="you@example.com"
+                            placeholder="you@gmail.com"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}

@@ -82,8 +82,7 @@ export default function Dashboard() {
             {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-brand">
-                    <span className="navbar-logo">✅</span>
-                    <h1 className="navbar-title">ToDo</h1>
+                    <h1 className="navbar-title">Task Manager</h1>
                 </div>
                 <div className="navbar-right">
                     <span className="navbar-user">{currentUser.displayName || currentUser.email}</span>
@@ -99,7 +98,7 @@ export default function Dashboard() {
                     {/* Add / Edit Task Form */}
                     <section className="task-form-section">
                         <h2 className="section-title">
-                            {editingTask ? '✏️ Edit Task' : '📝 New Task'}
+                            {editingTask ? ' Edit Task' : 'New Task'}
                         </h2>
                         <TaskForm
                             onSubmit={editingTask ? handleEditSubmit : handleAddTask}
@@ -114,7 +113,7 @@ export default function Dashboard() {
                     {/* Task List */}
                     <section className="task-list-section">
                         <h2 className="section-title">
-                            📋 Your Tasks
+                             Your Tasks
                             {tasks.length > 0 && (
                                 <span className="task-count">
                                     {tasks.filter((t) => !t.completed).length} remaining
@@ -129,7 +128,6 @@ export default function Dashboard() {
                             </div>
                         ) : tasks.length === 0 ? (
                             <div className="empty-state">
-                                <span className="empty-icon">🎉</span>
                                 <h3>No tasks yet!</h3>
                                 <p>Add your first task above to get started.</p>
                             </div>

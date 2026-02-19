@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Signup() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [age, setAge] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
@@ -26,7 +28,7 @@ export default function Signup() {
         try {
             setError('');
             setLoading(true);
-            await signup(email, password, name);
+            await signup(email, password, name, age, phoneNumber);
             navigate('/login');
         } catch (err) {
             setError('Failed to create an account: ' + err.message);
@@ -52,6 +54,28 @@ export default function Signup() {
                             required
                             value={name}
                             onChange={(e) => setName(e.target.value)}
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="signup-age">Age</label>
+                        <input
+                            id="signup-age"
+                            type="number"
+                            placeholder="Enter your age"
+                            required
+                            value={age}
+                            onChange={(e) => setAge(e.target.value)}
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="signup-phone">Phone Number</label>
+                        <input
+                            id="signup-phone"
+                            type="tel"
+                            placeholder="Enter your phone number"
+                            required
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
                         />
                     </div>
                     <div className="input-group">

@@ -110,7 +110,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(255, 255, 255);
+    background: linear-gradient(#1A1A2E);
     padding: 20px;
 }
 

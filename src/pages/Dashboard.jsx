@@ -79,7 +79,6 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard">
-            {/* Navbar */}
             <nav className="navbar">
                 <div className="navbar-brand">
                     <h1 className="navbar-title">Task Manager</h1>
@@ -91,11 +90,8 @@ export default function Dashboard() {
                     </button>
                 </div>
             </nav>
-
-            {/* Main Content */}
             <main className="dashboard-main">
                 <div className="dashboard-container">
-                    {/* Add / Edit Task Form */}
                     <section className="task-form-section">
                         <h2 className="section-title">
                             {editingTask ? ' Edit Task' : 'New Task'}
@@ -106,11 +102,7 @@ export default function Dashboard() {
                             onCancel={() => setEditingTask(null)}
                         />
                     </section>
-
-                    {/* Error */}
                     {error && <div className="error-msg">{error}</div>}
-
-                    {/* Task List */}
                     <section className="task-list-section">
                         <h2 className="section-title">
                              Your Tasks

@@ -1,7 +1,6 @@
-/* ===== Google Font ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* ===== CSS Custom Properties ===== */
 :root {
     --color-bg: #0f0f1a;
     --color-surface: #1a1a2e;
@@ -31,7 +30,6 @@
     --transition-normal: 0.25s ease;
 }
 
-/* ===== Reset & Base ===== */
 *,
 *::before,
 *::after {
@@ -63,7 +61,6 @@ a:hover {
     color: var(--color-accent);
 }
 
-/* ===== Animations ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -104,7 +101,6 @@ a:hover {
     }
 }
 
-/* ===== Auth Pages ===== */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -149,7 +145,6 @@ a:hover {
     font-size: 14px;
 }
 
-/* ===== Input Groups ===== */
 .input-group {
     margin-bottom: 18px;
 }
@@ -196,7 +191,6 @@ a:hover {
     font-size: 14px;
 }
 
-/* ===== Buttons ===== */
 .primary-btn {
     width: 100%;
     padding: 12px 20px;
@@ -246,7 +240,6 @@ a:hover {
     border-color: var(--color-text-dim);
 }
 
-/* ===== Error Message ===== */
 .error-msg {
     color: #fca5a5;
     background: rgba(239, 68, 68, 0.15);
@@ -258,7 +251,6 @@ a:hover {
     animation: fadeIn 0.3s ease;
 }
 
-/* ===== Navbar ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -321,7 +313,6 @@ a:hover {
     border-color: rgba(239, 68, 68, 0.3);
 }
 
-/* ===== Dashboard ===== */
 .dashboard {
     min-height: 100vh;
     background: var(--color-bg);
@@ -337,7 +328,6 @@ a:hover {
     animation: fadeInUp 0.5s ease;
 }
 
-/* ===== Section Titles ===== */
 .section-title {
     font-size: 18px;
     font-weight: 600;
@@ -358,7 +348,6 @@ a:hover {
     margin-left: 8px;
 }
 
-/* ===== Task Form ===== */
 .task-form-section {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -393,7 +382,6 @@ a:hover {
     margin-top: 0;
 }
 
-/* ===== Task List ===== */
 .task-list-section {
     margin-top: 8px;
 }
@@ -404,7 +392,6 @@ a:hover {
     gap: 12px;
 }
 
-/* ===== Task Card ===== */
 .task-card {
     display: flex;
     justify-content: space-between;
@@ -440,7 +427,6 @@ a:hover {
     min-width: 0;
 }
 
-/* ===== Custom Checkbox ===== */
 .task-checkbox-label {
     position: relative;
     display: flex;
@@ -490,7 +476,6 @@ a:hover {
     border-color: var(--color-primary);
 }
 
-/* ===== Task Content ===== */
 .task-content {
     flex: 1;
     min-width: 0;
@@ -515,7 +500,6 @@ a:hover {
     color: var(--color-text-dim) !important;
 }
 
-/* ===== Task Actions ===== */
 .task-actions {
     display: flex;
     gap: 6px;
@@ -560,7 +544,6 @@ a:hover {
     color: #fca5a5;
 }
 
-/* ===== Loading & Empty States ===== */
 .loading-container {
     display: flex;
     flex-direction: column;
@@ -605,7 +588,6 @@ a:hover {
     color: var(--color-text-dim);
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 640px) {
     .navbar {
         padding: 12px 16px;

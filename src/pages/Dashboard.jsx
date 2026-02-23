@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { addTask, updateTask, deleteTask, subscribeTasks } from '../services/taskService';
+import {
+    addTask,
+    updateTask,
+    deleteTask,
+    subscribeTasks
+} from '../services/taskService';
 import TaskCard from '../components/TaskCard';
 import TaskForm from '../components/TaskForm';
 
@@ -26,15 +31,13 @@ export default function Dashboard() {
 
     const sortedTasks = [...tasks].sort((a, b) => {
         if (a.completed !== b.completed) return a.completed ? 1 : -1;
-        const aTime = a.createdAt?.seconds || 0;
-        const bTime = b.createdAt?.seconds || 0;
-        return bTime - aTime;
+        return new Date(b.createdAt) - new Date(a.createdAt);
     });
 
-    async function handleAddTask({ title, description }) {
+    async function handleAddTask({ title, description, notes, deadline }) {
         try {
             setError('');
-            await addTask(currentUser.uid, { title, description });
+            await addTask(currentUser.uid, { title, description, notes, deadline });
         } catch (err) {
             setError('Failed to add task: ' + err.message);
         }
@@ -53,10 +56,10 @@ export default function Dashboard() {
         setEditingTask(task);
     }
 
-    async function handleEditSubmit({ title, description }) {
+    async function handleEditSubmit({ title, description, notes, deadline }) {
         try {
             setError('');
-            await updateTask(editingTask.id, { title, description });
+            await updateTask(editingTask.id, { title, description, notes, deadline });
             setEditingTask(null);
         } catch (err) {
             setError('Failed to update task: ' + err.message);
@@ -94,7 +97,7 @@ export default function Dashboard() {
                 <div className="dashboard-container">
                     <section className="task-form-section">
                         <h2 className="section-title">
-                            {editingTask ? ' Edit Task' : 'New Task'}
+                            {editingTask ? 'Edit Task' : 'New Task'}
                         </h2>
                         <TaskForm
                             onSubmit={editingTask ? handleEditSubmit : handleAddTask}
@@ -105,7 +108,7 @@ export default function Dashboard() {
                     {error && <div className="error-msg">{error}</div>}
                     <section className="task-list-section">
                         <h2 className="section-title">
-                             Your Tasks
+                            Your Tasks
                             {tasks.length > 0 && (
                                 <span className="task-count">
                                     {tasks.filter((t) => !t.completed).length} remaining

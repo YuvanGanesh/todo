@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const { login } = useAuth();
@@ -57,14 +58,24 @@ export default function Login() {
                     </div>
                     <div className="input-group">
                         <label htmlFor="login-password">Password</label>
-                        <input
-                            id="login-password"
-                            type="password"
-                            placeholder="••••••••"
-                            required
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                        <div className="password-input-wrapper">
+                            <input
+                                id="login-password"
+                                type={showPassword ? 'text' : 'password'}
+                                placeholder="••••••••"
+                                required
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <button
+                                type="button"
+                                className="password-toggle-btn"
+                                onClick={() => setShowPassword(!showPassword)}
+                                tabIndex={-1}
+                            >
+                                {showPassword ? '🙈' : '👁️'}
+                            </button>
+                        </div>
                     </div>
                     <button className="primary-btn" type="submit" disabled={loading}>
                         {loading ? 'Logging in...' : 'Login'}
